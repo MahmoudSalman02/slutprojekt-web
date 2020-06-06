@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<!--länka css-->
+		<link href="style.css" rel="stylesheet">
+		<title>Travis - Shows</title>
+	</head>
+	<body id="Shows">
+		<!--main page class-->
+        <div class="wrapper">
+            <header>
+                <img class="logo" src="logo.png" alt="img">
+                <!--logo i header-->
+                <!--dropdown meny med lsitan-->
+				<nav>
+                   <ul class="linksme">
+                        <!--länk till Home page-->
+					<li class="mainlink"> <a href="index.html">Home</a></li>
+                       <!--Drop down på Music section -->
+                       <!--class active för att den öppnade sidan-->
+					<li class="mainlink active "> <a href="#">Music</a> <ul class="dropdown">  
+                        <!--länk till News page-->
+                        <li><a href="News.html"> News </a></li>   
+                        <!--länk till Shows page-->
+                        <li><a href="Shows.html"> Shows </a></li></ul>
+                        <!--Drop down på About section -->
+					<li class="mainlink"><a href="#">About</a><ul class="dropdown"> 
+                        <!--Länkt till Clothes page -->
+                        <li><a href="Clothes.html"> Clothes </a></li>
+                        <!--Länl till socailmedia page -->
+                        <li><a href="Social.html"> SocialMedia </a></li></ul>
+                   </li>	
+				  </ul>
+                </nav>
+            </header>
+            <main>
+                <!--rubruk för sidan-->
+                <h2>Be the first to buy Travis next show!</h2>
+                <!--första section efter header-->		
+			<section class="BForm">
+                <!--start på form-->
+			<form>
+                <!--fildest för att speceficera formen med border runt om-->
+			<fieldset>
+                <!--fieldest namn -->
+					<legend>Checkout Info</legend>
+                <!--första section efter header-->
+                                <label for="comment">any comment:</label>
+                    <textarea id="comment" name="comment">
+                      </textarea>
+				<label for="finame"> Full Name</label>
+					<input type="text" id="finame" name="firstname" placeholder="Mahmoud Salman" required>
+				<label for="email"> Email</label>
+					<input type="email" id="email" name="email" placeholder="Mahmoud@gmail.com" required>
+				<label for="adrs">Address</label>
+					<input type="text" id="adrs" name="address" placeholder="Kungsgatan 35" required>
+				<label for="cy"> City</label>
+					<input type="text" id="cy" name="cy" placeholder="Vaxjo" required>
+				<label for="zip">Zip</label>
+					<input type="text" id="zip" name="zip" placeholder="352 39" required>
+				<label for="caname">Name on Card</label>
+				 <input  type="number" id="caname" name="cardname" placeholder="Mahmoud Salman" required>
+				<label for="cacnum">Credit card number</label>
+					<input type="text" id="cacnum" name="cardnumber" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+				<label for="expmonth">Exp Month :</label>
+					<select id="expmonth" name="months" >
+						<option value="01">01</option>
+						<option value="02">02</option>
+						<option value="03">03</option>
+						<option value="04">05</option>
+						<option value="05">05</option>
+						<option value="06">06</option>
+						<option value="07">07</option>
+						<option value="08">08</option>
+						<option value="09">09</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select>
+				<label for="expyear">Exp Year</label>
+					<input type="text" id="expyear" name="expyear" placeholder="2020" required>
+				<label for="cvv">CVV</label>
+					<input type="text" id="cvv" name="cvv" placeholder="xxx" required>
+					<input type="checkbox" name="agree" required> Agree 
+                <input type="submit"  value="submit"> 
+			</fieldset>
+			</form>
+			</section>
+            </main>
+            <!--footer med länkar till socialamedier-->
+            <footer>
+			 <ul class="social">
+	   		    <li><a href=" https://www.facebook.com/travisscottlaflame"> 
+                    <img class="fb" src="fb.png" alt="Facebook" > </a></li> 
+    			<li><a href="https://twitter.com/trvisxx">
+                    <img class="tw" src="tw.png" alt="Twitter" > </a></li>
+			    <li><a href="https://www.instagram.com/travisscott/?hl=sv">
+                    <img class="ig" src="ig.png" alt="Intagram" > </a></li>
+			    <li><a href="https://www.youtube.com/user/TravisScottXX">
+                    <img class="yt" src="yt.png" alt="Youtube" > </a></li>
+             </ul>
+            </footer>
+        </div>
+	</body>
+</html>

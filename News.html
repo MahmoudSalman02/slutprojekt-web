@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<!--länka css-->
+		<link href="style.css" rel="stylesheet">
+		<title>Travis - News</title>
+	</head>
+	<body id="news">
+		<!--main page class-->
+        <div class="wrapper">
+            <header>
+                <img class="logo" src="logo.png" alt="img">
+                <!--logo i header-->
+                <!--dropdown meny med lsitan-->
+				<nav>
+                   <ul class="linksme">
+                        <!--länk till Home page-->
+					<li class="mainlink"> <a href="index.html">Home</a></li>
+                       <!--Drop down på Music section -->
+                       <!--class active för att den öppnade Section-->
+					<li class="mainlink active"> <a href="#">Music</a> <ul class="dropdown">  
+                        <!--länk till News page-->
+                        <li><a href="News.html"> News </a></li>   
+                        <!--länk till Shows page-->
+                        <li><a href="Shows.html"> Shows </a></li></ul>
+					<li class="mainlink"><a href="#">About</a><ul class="dropdown"> 
+                        <!--Länkt till Clothes page -->
+                        <li><a href="Clothes.html"> Clothes </a></li>
+                        <!--Länl till socailmedia page -->
+                        <li><a href="Social.html"> SocialMedia </a></li></ul>
+                   </li>	
+				  </ul>
+                </nav>
+            </header>
+            <main>
+                <!--första section efter header-->
+			 <section class="sp">
+				<h1> Travis latest music releases </h1>
+                 <!-- en list med audio filar somar är deras rubrik länkad till album länk-->
+				<ul>
+				 <li> <a href="https://jackboys.lnk.to/JACKBOYS">The Scotts</a>                                                         <audio controls> <source src="THE-SCOTTS.mp3" type="audio/mpeg">                                                           Your browser does not support the  audio element.</audio></li>
+				 <li> <a href="https://jackboys.lnk.to/JACKBOYS">Out West</a>                                                            <audio controls> <source src="OUT-WEST.mp3" type="audio/mpeg">                                                           Your browser does not support the audio element.</audio></li>
+				 <li> <a href="https://jackboys.lnk.to/JACKBOYS">Gang Gang</a>                                                            <audio controls> <source src="GANG-GANG.mp3" type="audio/mpeg">                                                           Your browser does not support the audio element.</audio> </li>
+                 </ul>
+             </section>
+			 <section class="vid"> 
+				<h1>Best of Travis Scott</h1>
+                 <!-- en vidoe som är med en rubrik som är länkad till vido på yt-->
+				<a href="https://www.youtube.com/watch?v=6ONRf7h3Mdk"> Travis Scott - SICKO MODE ft. Drake</a>
+				<video controls>
+				<source src="SICKO-MODE.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+				</video>
+			 </section>
+            </main>
+                <!--footer med länkar till socialamedier--> 
+            <footer>
+			 <ul class="social">
+	   		    <li><a href=" https://www.facebook.com/travisscottlaflame"> 
+                    <img class="fb" src="fb.png" alt="Facebook" > </a></li> 
+    			<li><a href="https://twitter.com/trvisxx">
+                    <img class="tw" src="tw.png" alt="Twitter" > </a></li>
+			    <li><a href="https://www.instagram.com/travisscott/?hl=sv">
+                    <img class="ig" src="ig.png" alt="Intagram" > </a></li>
+			    <li><a href="https://www.youtube.com/user/TravisScottXX">
+                    <img class="yt" src="yt.png" alt="Youtube" > </a></li>
+             </ul>
+            </footer>
+        </div>
+	</body>
+</html>

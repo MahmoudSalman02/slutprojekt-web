@@ -1,0 +1,382 @@
+/* En font som är taging från google kallas för Tenali Ramakrishna */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&display=swap');
+/* body style för att sidan ska se normal ut med en bestämmed font till allt text '*/
+body {
+    margin:0;
+	padding:0;
+    font-family: 'Tenali Ramakrishna', sans-serif;
+}
+/*wrapper div grid layout*/
+.wrapper {
+	display: grid;
+	grid-template-areas: 
+	"header" 
+	"main"
+    "footer"; 
+	min-height: 100vh;
+	grid-gap: 0.7rem 3rem; 
+    grid-template-rows: 0.2fr 2fr 0.3fr;
+	
+}
+/*Header*/
+/*Header grid layout*/
+header {
+    grid-area: header; 
+    display: grid;
+    grid-template-areas:
+    "logo"
+    ".";
+    grid-template-columns: 1fr;
+	background-image:url("travis.jpg") ;
+	background-position: 10% 20%;
+    height:13rem;
+}
+.logo {
+    grid-area: logo;
+}
+img.logo {
+    height: 11rem; 
+    width: 13rem; 
+	margin-top:1rem;
+}
+/* nav style */
+nav{
+	position: absolute;
+	right: 5rem;
+    top: 0.5rem;
+	display: inline-block;
+    font-weight: 700;
+}
+.linksme, .dropdown, .social1{
+	list-style:none;	
+}
+.mainlink {
+	position: relative;
+	display: inline-block;
+	background-color:#111111;
+	box-shadow: 10px 10px 41px 5px rgba(0,0,0,0.68);
+	padding:0.9rem 3.5rem ;
+}
+.mainlink a {
+	color:white;
+	text-decoration:none;
+	   
+}
+.dropdown {
+	display: none;
+	position :absolute;
+	left:-5%;	
+	background-color: white;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 0.7rem 0 ;
+	margin:1rem;
+	width:11rem;
+}
+.dropdown li{ 
+	z-index:1;
+	padding:0.5rem;
+}
+.dropdown a {
+	font-size:1.6rem;
+	display:block;
+	text-align:center;
+}
+/* slect the first li for the dropdwon list list*/
+.dropdown li:nth-child(1){
+	border-bottom:1.5px solid black;	
+}
+.mainlink:hover .dropdown {
+	display: block;
+}
+/* link style*/
+.mainlink:hover a{
+	opacity :0.8;
+	color:#781A65;	
+}
+a:link{
+    font-size:1.8rem; 
+}
+a:active{
+    opacity :0.8;
+}
+a:visited{
+	color:#781A65;
+}
+.active a{
+    opacity :0.8;
+	color:#781A65;
+}
+/*Page 1 Home*/
+/*main grid layout*/
+#home main {
+	grid-template-columns: 2.5fr 1fr;
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+    "textinfo imginfo"; 
+	padding:1rem;
+}
+.textinfo{
+	grid-area:textinfo;
+	display:grid;
+	background-color:#004387;
+	overflow: auto;
+	max-height:35rem;
+}
+.textinfo h1 {
+	text-align:center;
+	font-size:2.5rem;
+	color:black;
+	text-decoration:underline;
+	margin-top:2rem;
+}
+/*style tect for smaller screens*/
+@media screen and (max-width: 992px) {
+.textinfo h1   {
+    font-size:1.25rem;
+	
+  }
+}
+.textinfo p{
+	font-size:1.2rem;
+	color:white;
+	margin:0.5rem;
+	padding:0.2rem;
+}
+/*style tect for smaller screens*/
+@media screen and (max-width: 992px) {
+.textinfo p   {
+    font-size:0.7rem;
+	
+  }
+}
+.imginfo{
+	grid-area:imginfo;
+	display:grid;
+}
+.img1{
+	height:35rem;
+	width:auto;
+}
+/* footer*/
+/* footer gridlayout*/
+footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-areas:
+    "social";
+	grid-template-columns: 1fr;
+	background-color:#101010;
+	grid-gap:30px;
+}
+.social{
+	grid-area:social;
+	display:grid;
+	justify-content:center;
+	float:left;
+	list-style-type:none;
+}
+.social img {
+  width: auto;
+  height:2.5rem;
+  border-radius: 20%;
+}
+.social li{
+	float: left; 
+	margin: 0 10px;
+}
+.social a:hover{
+	opacity:0.7;	
+}
+/*page 2 News style*/
+/*amin grid layout*/
+#news main{
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+    "sp" 
+	"vid"; 
+	grid-template-rows: 0.5fr 0.5fr;
+	background: linear-gradient( #003678 ,#003B87 );
+	box-shadow: 10px 10px 41px 5px rgba(0,0,0,0.68);
+}
+.sp{
+	grid-area:sp;
+	display:grid;
+	width:100vw;
+	
+}
+.sp h1{
+	text-align:center;
+	font-size:2.5rem;
+	font-weight: 700;
+	color:white;
+	text-shadow: 2px 2px 2px rgb(0, 153, 0);
+}
+.sp ul{
+	list-style:none;
+	text-align:center;
+}
+.sp li{
+	padding:2rem;
+}
+.sp li:hover a {
+	opacity:0.7;
+}
+.sp a {
+	color:white;
+	font-size:2rem;
+	float:left;
+	text-decoration:none;
+	border-bottom: 3px solid #009900;
+	text-shadow: 2px 2px 2px rgb(0, 153, 0);
+}
+audio{                                           
+	width:50vw;
+}
+
+.vid{
+	grid-area:vid;
+	display:grid;
+	justify-content: center;
+}
+.vid h1 {
+	text-align:center;
+	font-size:2.5rem;
+	font-weight: 700;
+	color:white;
+	text-shadow: 2px 2px 2px #CC0000;
+}
+.vid a{
+	text-align:center;
+	font-size:1.5rem;
+	font-weight: 700;
+	color:white;
+	text-shadow: 2px 2px 2px #CC0000;
+}
+a:hover {
+	opacity:0.7;
+}
+video{
+	width:70vw;
+	height:auto;
+	text-align:center;
+	box-shadow: 10px 10px 41px 5px rgba(0,0,0,0.68);
+	margin:1.3rem;
+	background:transparent url("SICKO-MODE.jpg") no-repeat 0 0;
+
+}
+/* page 3 Shows style*/
+/* main grid layout*/
+#Shows main{
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+	"."
+	"BForm"; 
+	grid-template-rows:  0.2fr 0.8fr;
+	background: linear-gradient( #003678 ,#003B87 );
+	justify-content:center;
+}
+#Shows h2{
+
+	font-size:2.5rem;
+	font-weight: 700;
+	color:white;
+	text-shadow: 2px 2px 2px #CC0000;
+    text-align:center;
+}
+.BForm{
+	grid-area:BForm;
+	display:grid;
+}
+/* form style*/
+form{
+	text-align:center;
+}
+
+input, select {
+	vertical-align: middle;
+	margin: 0.3rem 0.6rem 0.3rem 0;
+	padding: 0.6rem;
+	border: 1px solid #ddd;
+}
+label {
+	margin: 0.3rem 0.6rem 0.3rem 0;
+	display:flex;
+	text-align:center;
+}
+input[type="submit"]{
+	background-color: dodgerblue;
+}
+input[type="submit"]:hover{
+    background-color: royalblue;
+}
+input:focus {
+  background-color: yellow;
+}
+/* page 4 'Clothes' style*/
+/* main grid layout*/
+#Clothes main{
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+      "."
+	"tables";  
+}
+#Clothes h1{
+    font-size:3rem;
+    text-shadow: 2px 2px 2px Orange;
+    text-align:center;
+}
+
+.tables{
+    grid-area:tables;
+    display:grid;
+    margin:1rem;
+}
+/*table styl*/
+table{
+    border-collapse: collapse;
+    margin:1rem;
+}
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+table {
+    table-layout: fixed;
+    width: 95%;
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+
+thead th {
+    width: 100%;
+  
+}
+tboday td{
+    width:25%
+}
+th, td {
+    padding: 20px;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+/*PAge 5 'Social'*/
+/*main grid layout*/
+#Social main{
+    background-color:hsla(217, 100%, 50%, 1);
+}
+#Social h1{
+    font-size:3rem;
+    text-shadow: 2px 2px 2px white;
+    text-align:center;
+}
+.social1 img{
+    width:20vw;
+    height:auto;
+    float:left;
+    margin:1rem;
+}
