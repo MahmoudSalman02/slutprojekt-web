@@ -5,18 +5,18 @@ body {
     margin:0;
 	padding:0;
     font-family: 'Tenali Ramakrishna', sans-serif;
+    width:100%;
+    height:100%;
 }
-/*wrapper div grid layout*/
+/*wrapper div grid layout ,tvåspaltslayout,minst 100 view höjd, grid gap 0.7rem upp och ner */
 .wrapper {
 	display: grid;
 	grid-template-areas: 
-	"header" 
-	"main"
-    "footer"; 
+	"header header" 
+	"main main"
+    "footer footer"; 
 	min-height: 100vh;
-	grid-gap: 0.7rem 3rem; 
-    grid-template-rows: 0.2fr 2fr 0.3fr;
-	
+	grid-gap: 0.7rem 1rem; 
 }
 /*Header*/
 /*Header grid layout*/
@@ -24,32 +24,31 @@ header {
     grid-area: header; 
     display: grid;
     grid-template-areas:
-    "logo"
-    ".";
+    "logo . nav";
     grid-template-columns: 1fr;
 	background-image:url("travis.jpg") ;
 	background-position: 10% 20%;
     height:13rem;
 }
-.logo {
+/* style logo img in header */
+header img {
     grid-area: logo;
-}
-img.logo {
+    display:grid;
     height: 11rem; 
     width: 13rem; 
 	margin-top:1rem;
 }
-/* nav style */
+/*nav style*/
 nav{
-	position: absolute;
-	right: 5rem;
-    top: 0.5rem;
-	display: inline-block;
+    grid-area: nav; 
+    display:grid;
     font-weight: 700;
 }
-.linksme, .dropdown, .social1{
-	list-style:none;	
+/*style på alla li med dessa klasseer */
+.linksme, .dropdown, .social1, .social{
+	list-style-type:none;	
 }
+/*style på listan med class mainlink*/
 .mainlink {
 	position: relative;
 	display: inline-block;
@@ -59,9 +58,9 @@ nav{
 }
 .mainlink a {
 	color:white;
-	text-decoration:none;
-	   
+	text-decoration:none;   
 }
+/*style på lista med class dropdown så den är inte synlig tills man hover över den*/
 .dropdown {
 	display: none;
 	position :absolute;
@@ -88,75 +87,8 @@ nav{
 .mainlink:hover .dropdown {
 	display: block;
 }
-/* link style*/
 .mainlink:hover a{
-	opacity :0.8;
 	color:#781A65;	
-}
-a:link{
-    font-size:1.8rem; 
-}
-a:active{
-    opacity :0.8;
-}
-a:visited{
-	color:#781A65;
-}
-.active a{
-    opacity :0.8;
-	color:#781A65;
-}
-/*Page 1 Home*/
-/*main grid layout*/
-#home main {
-	grid-template-columns: 2.5fr 1fr;
-    grid-area: main;
-    display: grid;
-    grid-template-areas:
-    "textinfo imginfo"; 
-	padding:1rem;
-}
-.textinfo{
-	grid-area:textinfo;
-	display:grid;
-	background-color:#004387;
-	overflow: auto;
-	max-height:35rem;
-}
-.textinfo h1 {
-	text-align:center;
-	font-size:2.5rem;
-	color:black;
-	text-decoration:underline;
-	margin-top:2rem;
-}
-/*style tect for smaller screens*/
-@media screen and (max-width: 992px) {
-.textinfo h1   {
-    font-size:1.25rem;
-	
-  }
-}
-.textinfo p{
-	font-size:1.2rem;
-	color:white;
-	margin:0.5rem;
-	padding:0.2rem;
-}
-/*style tect for smaller screens*/
-@media screen and (max-width: 992px) {
-.textinfo p   {
-    font-size:0.7rem;
-	
-  }
-}
-.imginfo{
-	grid-area:imginfo;
-	display:grid;
-}
-.img1{
-	height:35rem;
-	width:auto;
 }
 /* footer*/
 /* footer gridlayout*/
@@ -169,61 +101,126 @@ footer {
 	background-color:#101010;
 	grid-gap:30px;
 }
+/*style social list in footer*/
 .social{
-	grid-area:social;
+    grid-area:social;
 	display:grid;
 	justify-content:center;
 	float:left;
-	list-style-type:none;
 }
+/*style alla bilder i social ul */
 .social img {
-  width: auto;
-  height:2.5rem;
-  border-radius: 20%;
+    width: auto;
+    height:2.5rem;
+    border-radius: 20%;
 }
 .social li{
 	float: left; 
-	margin: 0 10px;
+	margin: 0 11px;
 }
-.social a:hover{
-	opacity:0.7;	
+/*LOve fokus hate style på alla länkar i alla sidor*/
+a:link{
+    font-size:1.8rem; 
+    text-decoration:none;
 }
+a:visited{
+	opacity:0.5;
+}
+a:focus, a:hover {
+   opacity:0.7;
+}
+a:active{
+    opacity :0.8;
+}
+/* nav style */
+
+/*Page 1 Home*/
+/*main grid layout , använda med med id för att specificera för just home page*/
+#home main {
+	grid-template-columns: 2.5fr 1fr;
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+    "textinfo imginfo"; 
+	padding:1rem;
+}
+/*grid area textinfor som är första section i home page anvande id selector för släppa och göra massa klasser*/
+#home section:nth-child(1){
+	grid-area:textinfo;
+	display:grid;
+	background-color:#004387;
+	overflow: auto;
+	max-height:35rem;
+}
+#home section:nth-child(1) h1 {
+	text-align:center;
+	font-size:2.5rem;
+	color:black;
+	text-decoration:underline;
+	margin-top:2rem;
+}
+/*style text for smaller screens*/
+@media screen and (max-width: 992px) {
+#home h1   {
+    font-size:1.25rem;
+	
+  }
+}
+/*styler text med hjälp av id selctor */
+#home p{
+	font-size:1.2rem;
+	color:white;
+	margin:0.5rem;
+	padding:0.2rem;
+}
+/*style text for mindre screens med hjälp utav id selector */
+@media screen and (max-width: 992px) {
+#home  p{
+    font-size:0.6rem;	
+  }
+}
+#home section:nth-child(2){
+	grid-area:imginfo;
+	display:grid;
+}
+#home section:nth-child(2) img{
+	height:35rem;
+	width:auto;
+}
+
 /*page 2 News style*/
-/*amin grid layout*/
+/*main grid layout*/
 #news main{
     grid-area: main;
     display: grid;
     grid-template-areas:
-    "sp" 
-	"vid"; 
+    "sp . " 
+	"vid ."; 
 	grid-template-rows: 0.5fr 0.5fr;
 	background: linear-gradient( #003678 ,#003B87 );
 	box-shadow: 10px 10px 41px 5px rgba(0,0,0,0.68);
 }
-.sp{
+/*styleförsta section i News page med hjälp av id selector och nth child, style också element med hjälp av det */
+#news section:nth-child(1){
 	grid-area:sp;
 	display:grid;
-	width:100vw;
-	
+	width:100vw;	
 }
-.sp h1{
+#news section:nth-child(1) h1{
 	text-align:center;
 	font-size:2.5rem;
 	font-weight: 700;
 	color:white;
 	text-shadow: 2px 2px 2px rgb(0, 153, 0);
 }
-.sp ul{
+#news section:nth-child(1) ul{
 	list-style:none;
 	text-align:center;
 }
-.sp li{
+#news section:nth-child(1) li{
 	padding:2rem;
 }
-.sp li:hover a {
-	opacity:0.7;
-}
-.sp a {
+#news section:nth-child(1) a {
 	color:white;
 	font-size:2rem;
 	float:left;
@@ -234,37 +231,33 @@ footer {
 audio{                                           
 	width:50vw;
 }
-
-.vid{
+/*styla andra section i news page, med hjälp av id selector och nth child 2, också här stylade alla elemnt med hjälåp av det*/
+#news section:nth-child(2){
 	grid-area:vid;
 	display:grid;
 	justify-content: center;
 }
-.vid h1 {
+#news section:nth-child(2) h1 {
 	text-align:center;
 	font-size:2.5rem;
 	font-weight: 700;
 	color:white;
 	text-shadow: 2px 2px 2px #CC0000;
 }
-.vid a{
+#news section:nth-child(2) a{
 	text-align:center;
 	font-size:1.5rem;
 	font-weight: 700;
 	color:white;
 	text-shadow: 2px 2px 2px #CC0000;
 }
-a:hover {
-	opacity:0.7;
-}
+/*style video element,sozenig och shadow*/
 video{
 	width:70vw;
 	height:auto;
 	text-align:center;
 	box-shadow: 10px 10px 41px 5px rgba(0,0,0,0.68);
 	margin:1.3rem;
-	background:transparent url("SICKO-MODE.jpg") no-repeat 0 0;
-
 }
 /* page 3 Shows style*/
 /* main grid layout*/
@@ -272,21 +265,22 @@ video{
     grid-area: main;
     display: grid;
     grid-template-areas:
-	"."
-	"BForm"; 
-	grid-template-rows:  0.2fr 0.8fr;
+	"BForm Bform"
+    "showsol showsol"; 
+	grid-template-rows:  0.7fr 0.3fr;
 	background: linear-gradient( #003678 ,#003B87 );
 	justify-content:center;
 }
-#Shows h2{
-
+/*style h2 som är bara i en section*/
+section > h2{
 	font-size:2.5rem;
 	font-weight: 700;
 	color:white;
 	text-shadow: 2px 2px 2px #CC0000;
     text-align:center;
 }
-.BForm{
+/* style den första section i Shows page */
+#Shows section:nth-child(1){
 	grid-area:BForm;
 	display:grid;
 }
@@ -294,9 +288,7 @@ video{
 form{
 	text-align:center;
 }
-
 input, select {
-	vertical-align: middle;
 	margin: 0.3rem 0.6rem 0.3rem 0;
 	padding: 0.6rem;
 	border: 1px solid #ddd;
@@ -312,8 +304,20 @@ input[type="submit"]{
 input[type="submit"]:hover{
     background-color: royalblue;
 }
+/*input fokus så när man skriver ändras backgrounden till gul*/
 input:focus {
   background-color: yellow;
+}
+/*styla andra section i Shows page*/
+#Shows section:nth-child(2){
+    grid-area:showsol;
+    display:grid;
+}
+/*styla ol listan*/
+ol{
+    font-size:2rem;
+    color:white;
+    text-align:center;
 }
 /* page 4 'Clothes' style*/
 /* main grid layout*/
@@ -321,16 +325,16 @@ input:focus {
     grid-area: main;
     display: grid;
     grid-template-areas:
-      "."
-	"tables";  
+      ". ."
+	"tables .";  
 }
 #Clothes h1{
     font-size:3rem;
     text-shadow: 2px 2px 2px Orange;
     text-align:center;
 }
-
-.tables{
+/*bestämma andra div till tables i grid layout*/
+#Clothes div:nth-child(2){
     grid-area:tables;
     display:grid;
     margin:1rem;
@@ -359,24 +363,42 @@ tboday td{
     width:25%
 }
 th, td {
-    padding: 20px;
+    padding: 2rem;
 }
+/*ändra background färgen (en ja och en nej)*/
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 /*PAge 5 'Social'*/
 /*main grid layout*/
 #Social main{
-    background-color:hsla(217, 100%, 50%, 1);
+    grid-area:main;
+    display:grid;
+    grid-template-areas:
+     "socialse socialse";
 }
+/*bestämma första section till area socialse i grid med hjälp av id selector och nth child för att minska klassor*/
+#Social section{
+    grid-area:socialse;
+    display:grid;
+    justify-content:center;
+}
+/*ändra alla text med element h1 u social page*/
 #Social h1{
     font-size:3rem;
     text-shadow: 2px 2px 2px white;
     text-align:center;
 }
-.social1 img{
-    width:20vw;
+/*style bilder i section på social page*/
+#Social section img{
+    position:relative;
+    width:6em;
     height:auto;
     float:left;
     margin:1rem;
+    border-radius: 20%;
+}
+/*stylar a element i Social page*/
+#Social a{
+    text-align :center;
 }

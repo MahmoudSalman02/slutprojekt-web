@@ -35,12 +35,11 @@
                 </nav>
             </header>
             <main>
-                <!--rubruk för sidan-->
-                <h2>Be the first to buy Travis next show!</h2>
                 <!--första section efter header-->		
-			<section class="BForm">
+			<section>
+                                <h2>Be the first to buy Travis next show!</h2>
                 <!--start på form-->
-			<form>
+			<form action="/" method="get">
                 <!--fildest för att speceficera formen med border runt om-->
 			<fieldset>
                 <!--fieldest namn -->
@@ -50,21 +49,25 @@
                     <textarea id="comment" name="comment">
                       </textarea>
 				<label for="finame"> Full Name</label>
-					<input type="text" id="finame" name="firstname" placeholder="Mahmoud Salman" required>
+					<input type="text" id="finame" name="firstname" placeholder="Mahmoud Salman" required><br><br>
 				<label for="email"> Email</label>
-					<input type="email" id="email" name="email" placeholder="Mahmoud@gmail.com" required>
+					<input type="email" id="email" name="email" placeholder="Mahmoud@gmail.com" required><br><br>
 				<label for="adrs">Address</label>
-					<input type="text" id="adrs" name="address" placeholder="Kungsgatan 35" required>
+					<input type="text" id="adrs" name="address" placeholder="Kungsgatan 35" required><br><br>
 				<label for="cy"> City</label>
-					<input type="text" id="cy" name="cy" placeholder="Vaxjo" required>
+					<input type="text" id="cy" name="cy" placeholder="Vaxjo" required><br><br>
 				<label for="zip">Zip</label>
-					<input type="text" id="zip" name="zip" placeholder="352 39" required>
+					<input type="text" id="zip" name="zip" placeholder="352 39" required><br><br>
+                <label for="kvinna">Kvinna</label> 
+                    <input type="radio" name="gender" id="kvinna" value="kvinna" />
+                 <label for="man">Man</label> 
+                    <input type="radio" name="gender" id="man" value="man" />
 				<label for="caname">Name on Card</label>
-				 <input  type="number" id="caname" name="cardname" placeholder="Mahmoud Salman" required>
+				 <input  type="number" id="caname" name="cardname" placeholder="Mahmoud Salman" required><br><br>
 				<label for="cacnum">Credit card number</label>
-					<input type="text" id="cacnum" name="cardnumber" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+			    <input type="text" id="cacnum" name="cardnumber" placeholder="xxxx-xxxx-xxxx-xxxx" required><br><br>
 				<label for="expmonth">Exp Month :</label>
-					<select id="expmonth" name="months" >
+					<select id="expmonth" name="months">
 						<option value="01">01</option>
 						<option value="02">02</option>
 						<option value="03">03</option>
@@ -79,27 +82,37 @@
 						<option value="12">12</option>
 					</select>
 				<label for="expyear">Exp Year</label>
-					<input type="text" id="expyear" name="expyear" placeholder="2020" required>
-				<label for="cvv">CVV</label>
-					<input type="text" id="cvv" name="cvv" placeholder="xxx" required>
-					<input type="checkbox" name="agree" required> Agree 
-                <input type="submit"  value="submit"> 
+					<input type="text" id="expyear" name="expyear" placeholder="2020" required><br><br>
+				<label for="cvv">Cvv:</label>
+                    <input type="password" id="cvv" name="cvv"><br><br>
+                <label for="agree"></label>
+                <input type="checkbox" name="agree" value="agree" id="agree" required>agree<br><br>
+                <input type="submit"  value="submit"> <br><br>
 			</fieldset>
 			</form>
 			</section>
+                <section>
+                    <h2>Travis festivals </h2>
+                    <ol>
+                       <li>MMMMMM</li>
+                       <li>TTTTTT</li>
+                       <li>RRRRRR</li>
+                    </ol>             
+                </section>
             </main>
             <!--footer med länkar till socialamedier-->
             <footer>
 			 <ul class="social">
 	   		    <li><a href=" https://www.facebook.com/travisscottlaflame"> 
-                    <img class="fb" src="fb.png" alt="Facebook" > </a></li> 
-    			<li><a href="https://twitter.com/trvisxx">
-                    <img class="tw" src="tw.png" alt="Twitter" > </a></li>
+                    <img class="fb" src="fb.png" alt="Facebook" >Facebook </a></li> 
+    			<li> <a href="https://twitter.com/trvisxx">
+                    <img class="tw" src="tw.png" alt="Twitter" >Twitter </a></li>
 			    <li><a href="https://www.instagram.com/travisscott/?hl=sv">
-                    <img class="ig" src="ig.png" alt="Intagram" > </a></li>
-			    <li><a href="https://www.youtube.com/user/TravisScottXX">
-                    <img class="yt" src="yt.png" alt="Youtube" > </a></li>
-             </ul>
+                    <img class="ig" src="ig.png" alt="Intagram" >Instagram </a></li>
+			    <li> <a href="https://www.youtube.com/user/TravisScottXX">
+                    <img class="yt" src="yt.png" alt="Youtube" >Youtube </a></li>
+             </ul>  
+                
             </footer>
         </div>
 	</body>
